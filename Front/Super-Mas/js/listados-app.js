@@ -1,10 +1,9 @@
-const API_BASE_URL = 'https://localhost:7289/api/'; 
+const API_BASE_URL = 'http://localhost:5126/api/'; 
 
 /**
- * Carga el listado de Clientes o Productos y los renderiza en una tabla.
- * @param {string} endpoint - El nombre del endpoint (Clientes o Productos).
- * @param {string} tableBodyId - El ID del <tbody> donde se insertarán las filas.
- * @param {string} loadingElementId - El ID del elemento que muestra el mensaje de carga.
+ * @param {string} endpoint
+ * @param {string} tableBodyId
+ * @param {string} loadingElementId
  */
 async function cargarListado(endpoint, tableBodyId, loadingElementId) {
     const tableBody = document.getElementById(tableBodyId);
@@ -18,8 +17,8 @@ async function cargarListado(endpoint, tableBodyId, loadingElementId) {
         }
         const data = await response.json();
 
-        loadingElement.style.display = 'none'; // Oculta el mensaje de carga
-        tableBody.innerHTML = ''; // Limpia cualquier contenido anterior
+        loadingElement.style.display = 'none';
+        tableBody.innerHTML = '';
 
         if (data.length === 0) {
             tableBody.innerHTML = `<tr><td colspan="${endpoint === 'Clientes' ? 7 : 5}" class="text-center">No hay ${endpoint.toLowerCase()} disponibles.</td></tr>`;

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/ssd1tb/proyects/Super-Mas-Realese/API/EcommerceApi/EcommerceApi.csproj": {}
+    "C:\\Users\\patan\\Codes\\Super-Mas-Release\\API\\EcommerceApi\\EcommerceApi.csproj": {}
   },
   "projects": {
-    "/mnt/ssd1tb/proyects/Super-Mas-Realese/API/EcommerceApi/EcommerceApi.csproj": {
+    "C:\\Users\\patan\\Codes\\Super-Mas-Release\\API\\EcommerceApi\\EcommerceApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/ssd1tb/proyects/Super-Mas-Realese/API/EcommerceApi/EcommerceApi.csproj",
+        "projectUniqueName": "C:\\Users\\patan\\Codes\\Super-Mas-Release\\API\\EcommerceApi\\EcommerceApi.csproj",
         "projectName": "EcommerceApi",
-        "projectPath": "/mnt/ssd1tb/proyects/Super-Mas-Realese/API/EcommerceApi/EcommerceApi.csproj",
-        "packagesPath": "/home/lautisape/.nuget/packages/",
-        "outputPath": "/mnt/ssd1tb/proyects/Super-Mas-Realese/API/EcommerceApi/obj/",
+        "projectPath": "C:\\Users\\patan\\Codes\\Super-Mas-Release\\API\\EcommerceApi\\EcommerceApi.csproj",
+        "packagesPath": "C:\\Users\\patan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\patan\\Codes\\Super-Mas-Release\\API\\EcommerceApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/lautisape/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\patan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -96,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
