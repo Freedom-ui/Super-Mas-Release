@@ -20,7 +20,20 @@ public class AppDbContext : DbContext
             new Cliente { Id = 4, Nombre = "Ana", Apellido = "Ruiz", Correo = "ana.r@mail.com", Zona = "Norte", Edad = 50, Genero = "Femenino" },
             new Cliente { Id = 5, Nombre = "Pedro", Apellido = "Diaz", Correo = "pedro.d@mail.com", Zona = "Oeste", Edad = 22, Genero = "Masculino" },
             new Cliente { Id = 6, Nombre = "Laura", Apellido = "Martinez", Correo = "laura.m@mail.com", Zona = "Centro", Edad = 35, Genero = "Femenino" },
-            new Cliente { Id = 7, Nombre = "Roberto", Apellido = "Sanchez", Correo = "roberto.s@mail.com", Zona = "Sur", Edad = 28, Genero = "Masculino" }
+            new Cliente { Id = 7, Nombre = "Roberto", Apellido = "Sanchez", Correo = "roberto.s@mail.com", Zona = "Sur", Edad = 28, Genero = "Masculino" },
+            new Cliente { Id = 8, Nombre = "Sofia", Apellido = "Torres", Correo = "sofia.t@mail.com", Zona = "Norte", Edad = 33, Genero = "Femenino" },
+            new Cliente { Id = 9, Nombre = "Diego", Apellido = "Fernandez", Correo = "diego.f@mail.com", Zona = "Este", Edad = 41, Genero = "Masculino" },
+            new Cliente { Id = 10, Nombre = "Valentina", Apellido = "Castro", Correo = "valentina.c@mail.com", Zona = "Oeste", Edad = 29, Genero = "Femenino" },
+            new Cliente { Id = 11, Nombre = "Lucas", Apellido = "Morales", Correo = "lucas.m@mail.com", Zona = "Centro", Edad = 38, Genero = "Masculino" },
+            new Cliente { Id = 12, Nombre = "Camila", Apellido = "Rojas", Correo = "camila.r@mail.com", Zona = "Sur", Edad = 26, Genero = "Femenino" },
+            new Cliente { Id = 13, Nombre = "Mateo", Apellido = "Vargas", Correo = "mateo.v@mail.com", Zona = "Norte", Edad = 52, Genero = "Masculino" },
+            new Cliente { Id = 14, Nombre = "Isabella", Apellido = "Silva", Correo = "isabella.s@mail.com", Zona = "Este", Edad = 24, Genero = "Femenino" },
+            new Cliente { Id = 15, Nombre = "Santiago", Apellido = "Mendez", Correo = "santiago.m@mail.com", Zona = "Oeste", Edad = 47, Genero = "Masculino" },
+            new Cliente { Id = 16, Nombre = "Lucia", Apellido = "Ortiz", Correo = "lucia.o@mail.com", Zona = "Centro", Edad = 31, Genero = "Femenino" },
+            new Cliente { Id = 17, Nombre = "Emiliano", Apellido = "Ramos", Correo = "emiliano.r@mail.com", Zona = "Sur", Edad = 36, Genero = "Masculino" },
+            new Cliente { Id = 18, Nombre = "Martina", Apellido = "Herrera", Correo = "martina.h@mail.com", Zona = "Norte", Edad = 27, Genero = "Femenino" },
+            new Cliente { Id = 19, Nombre = "Joaquin", Apellido = "Medina", Correo = "joaquin.m@mail.com", Zona = "Este", Edad = 44, Genero = "Masculino" },
+            new Cliente { Id = 20, Nombre = "Renata", Apellido = "Navarro", Correo = "renata.n@mail.com", Zona = "Oeste", Edad = 32, Genero = "Femenino" }
         );
 
         modelBuilder.Entity<Producto>().HasData(
