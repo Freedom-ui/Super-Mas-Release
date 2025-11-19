@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente Navbar</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="/html/index.html" class="logo-link">
+                <img src="../assets/icons/super-mas-icon.png" alt="Logo SuperMás">
+                <div class="logo-text">
+                    <span class="logo-title">SuperMás</span>
+                    <span class="logo-slogan">De todo, al mejor precio</span>
+                </div>
+            </a>
+        </div>
+        <div class="navbar-links">
+            <ul>
+                <li>
+                    <a href="/html/clientes.html" class="nav-link">Clientes</a>
+                </li>
+                <li>
+                    <a href="/html/productos.html" class="nav-link">Productos</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" onclick="showSection('ventas', this)">Registrar Venta</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" onclick="showSection('estadisticas', this)">Estadísticas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

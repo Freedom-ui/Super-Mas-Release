@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Super-Mas</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="icon" type="image/x-icon" href="../assets/icons/super-mas.ico">
+</head>
+<body>
+    <header id="navbar-container"></header>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Listado de Productos</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="productos-table-body">
+                    </tbody>
+            </table>
+        </div>
+        <p id="loading-productos" class="text-center">Cargando productos...</p>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/listados-app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarListado('Productos', 'productos-table-body', 'loading-productos');
+        });
+    </script>
+</body>
+</html>
