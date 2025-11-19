@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard E-commerce</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="../assets/icons/super-mas.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="content-container">
+
+
+        <div id="ventas-section" class="section-content active">
+
+            <div style="display: flex; gap: 20px;">
+                <section class="form-section">
+                    <h2 class="section-title">Cargar Nueva Venta</h2>
+                    <form id="venta-form">
+                        <div class="form-group">
+                            <label for="venta-clienteId">Cliente</label>
+                            <select id="venta-clienteId" required>
+                                <option value="">Cargando clientes...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="venta-productoId">Producto</label>
+                            <select id="venta-productoId" required>
+                                <option value="">Cargando productos...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="venta-cantidad">Cantidad</label>
+                            <input type="number" id="venta-cantidad" required min="1">
+                        </div>
+
+                        <input type="hidden" id="venta-precio-unitario">
+                        <div class="form-group">
+                            <label>Precio Unitario</label>
+                            <span id="display-precio-unitario">$0.00</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="venta-metodoPago">Método de pago</label>
+                            <select id="venta-metodoPago" required>
+                                <option value="">Seleccione un método</option>
+                                <option value="Efectivo">Efectivo</option>
+                                <option value="TC">Tarjeta de Crédito</option>
+                                <option value="TD">Tarjeta de Débito</option>
+                                <option value="QR">QR</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-button">Cargar Venta</button>
+                    </form>
+                </section>
+
+                <div class="vertical-divider"></div>
+
+                <section class="list-section">
+                    <h2 class="section-title">Ventas Registradas</h2>
+                    <div class="table-container">
+                        <table id="ventas-table">
+                            <thead>
+                                <tr>
+                                    <th>ID Venta</th>
+                                    <th>Cliente</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Método de pago</th>
+                                    <th>Localidad</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ventas-tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="estadisticas-section" class="section-content" style="display: none;">
+            <h2 class="section-title">Análisis de Datos</h2>
+            <div class="charts-column">
+
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <h3>Valor Total de Stock por Categoría</h3>
+                        <p class="chart-subtitle">Suma del valor (stock × precio) de productos por categoría.</p>
+                    </div>
+                    <canvas id="valorStockChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <h3>Top 5 Productos por Ingreso</h3>
+                        <p class="chart-subtitle">Productos con mayor ingreso total generado (precio × cantidad).</p>
+                    </div>
+                    <canvas id="top5ProductosChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <h3>Valor de Vida del Cliente (CLV)</h3>
+                        <p class="chart-subtitle">Estimación del ingreso acumulado promedio por cliente.</p>
+                    </div>
+                    <canvas id="clvChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <h3>Ventas por Método de Pago</h3>
+                        <p class="chart-subtitle">Distribución de ventas según el método de pago utilizado.</p>
+                    </div>
+                    <canvas id="metodoPagoChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <h3>Correlación: Stock vs. Precio (Arreglado)</h3>
+                        <p class="chart-subtitle">Muestra la relación entre el stock disponible y el precio de los
+                            productos.</p>
+                    </div>
+                    <canvas id="stockVsPrecioChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <h3>Edad Promedio de Compradores por Producto</h3>
+                        <p class="chart-subtitle">Edad promedio de los compradores agrupada por producto.</p>
+                    </div>
+                    <canvas id="edadPorProductoChart"></canvas>
+                </div>
+
+                <div class="chart-box-full">
+                    <div class="chart-header">
+                        <h3>Ventas Totales por Día</h3>
+                        <p class="chart-subtitle">Total de ingresos agrupados por día.</p>
+                    </div>
+                    <canvas id="ventasPorDiaChart"></canvas>
+                </div>
+
+                <div class="chart-box-full">
+                    <div class="chart-header">
+                        <h3>Ventas Totales por Hora</h3>
+                        <p class="chart-subtitle">Total de ingresos agrupados por hora del día.</p>
+                    </div>
+                    <canvas id="ventasPorHoraChart"></canvas>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function showSection(sectionId, button) {
+            document.querySelectorAll('.section-content').forEach(s => s.style.display = 'none');
+            document.getElementById(sectionId + '-section').style.display = 'flex';
+            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+            button.classList.add('active');
+
+            if (sectionId === 'estadisticas') {
+                if (typeof loadAllCharts === 'function') {
+                    loadAllCharts();
+                }
+            }
+        }
+    </script>
+    <script src="../js/component-loader.js"></script>
+    <script src="../js/ventas-app.js"></script>
+    <script src="../js/estadisticas-app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- Contenedor Principal (Flexbox) --- */
+.content-container {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    margin: 30px auto;
+    gap: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Secciones (Formulario y Lista) --- */
+.form-section {
+    flex: 0 0 30%;
+    padding: 20px;
+}
+
+.list-section {
+    flex: 0 0 70%;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.section-title {
+    color: #D50F13;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* --- Divisor Vertical --- */
+.vertical-divider {
+    width: 1px;
+    background-color: #D50F13;
+    align-self: stretch;
+    opacity: 0.5;
+}
+
+/* --- Estilos del Formulario --- */
+#venta-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.submit-button {
+    background-color: #D50F13;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-top: 15px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #b90d11;
+    transform: scale(1.02);
+}
+
+/* --- Estilos de la Tabla --- */
+.table-container {
+    width: 100%;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+#ventas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#ventas-table th,
+#ventas-table td {
+    border: 1px solid #D50F13;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+#ventas-table th {
+    background-color: #333; 
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+#ventas-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#ventas-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.chart-box canvas {
+    display: block !important;
+    max-height: 400px !important;
+    width: 100% !important;
+    height: 400px !important;
+}
+
+.chart-box-full canvas {
+    display: block !important;
+    max-height: 400px !important;
+    width: 100% !important;
+    height: 400px !important;
+}
+
+.chart-box {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chart-box-full {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#estadisticas-section {
+    flex-direction: column;
+    align-items: center;
+}
+
+.charts-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+}
+
+.chart-header h3 {
+    margin: 0 0 6px 0;
+    color: #D50F13;
+    text-align: left;
+}
+
+.chart-subtitle {
+    margin: 0 0 12px 0;
+    color: #666;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.chart-header {
+    
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto 8px auto;
+    padding: 0 0;
+}
